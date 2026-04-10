@@ -220,8 +220,8 @@ To order a painting, please copy and paste the title and size into ...<br>
       const msg = document.getElementById('message').value.trim();
       if (!msg) { alert("Please enter your message (max 200 chars)."); return; }
       const templateParams = {
-  from_name: document.getElementById('firstname').value + " " + document.getElementById('lastname').value,
-  reply_to: document.getElementById('email').value,
+ from_name: firstname + " " + lastname,
+  reply_to: email
   message: document.getElementById('message').value,
   date: new Date().toLocaleString()
 };
