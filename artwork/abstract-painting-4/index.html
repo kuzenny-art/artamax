@@ -217,13 +217,10 @@ To order a painting, please copy and paste the title and size into ...<br>
 
     document.getElementById('mailForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      const msg = document.getElementById('message').value.trim();
-      if (!msg) { alert("Please enter your message (max 200 chars)."); return; }
-     const templateParams = {
-  from_name: document.getElementById('firstname').value + " " + document.getElementById('lastname').value,
-  reply_to: document.getElementById('email').value,
-  message: msg + "\n\nArtwork: ABC-123".value,
-  date: new Date().toLocaleString()
+    const templateParams = {
+  from_name: firstname + " " + lastname,
+  reply_to: email,
+  message: msg + "\n\nArtwork: ABC-123"
 };
       emailjs.send("service_owjq15q", "template_9ikqhbi", templateParams)
         .then(() => {
