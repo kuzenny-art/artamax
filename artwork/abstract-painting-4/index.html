@@ -211,6 +211,32 @@ To order a painting, please copy and paste the title and size into ...<br>
   </div>
 </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    emailjs.init("hEcs6YM38yuR_gwK8"); // вставити свій Public Key з EmailJS
+
+    document.getElementById('mailForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const msg = document.getElementById('message').value.trim();
+      if (!msg) { alert("Please enter your message (max 200 chars)."); return; }
+
+      const templateParams = {
+        from_name: "Visitor from website",
+        message: msg,
+        date: new Date().toLocaleString()
+      };
+
+      emailjs.send("service_owjq15q", "template_9ikqhbi", templateParams)
+        .then(() => {
+          alert("Message sent successfully!");
+          document.getElementById('mailForm').reset();
+        }, (error) => {
+          alert("Failed to send message. Try again later.");
+          console.error(error);
+        });
+    });
+  </script>  
+
 <div class="site-footer">
   <div class="container">
     <div class="row mt-5">
@@ -222,61 +248,20 @@ To order a painting, please copy and paste the title and size into ...<br>
 </div>
 
 <script src="../../js/jquery-3.4.1.min.js"></script>
-<script src="../../js/popper.min.js"></script>
 <script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/owl.carousel.min.js"></script>
 <script src="../../js/jquery.animateNumber.min.js"></script>
 <script src="../../js/jquery.waypoints.min.js"></script>
 <script src="../../js/jquery.fancybox.min.js"></script>
 <script src="../../js/aos.js"></script>
-<script src="../../js/wave-animate.js"></script>
 <script src="../../js/circle-progress.js"></script>
 <script src="../../js/imagesloaded.pkgd.js"></script>
 <script src="../../js/isotope.pkgd.min.js"></script>
 <script src="../../js/jquery.easing.1.3.js"></script>
 <script src="../../js/TweenMax.min.js"></script>
-<script src="../../js/ScrollMagic.min.js"></script>
-<script src="../../js/scrollmagic.animation.gsap.min.js"></script>
+
+
 <script src="../../js/custom.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-emailjs.init("hEcs6YM38yuR_gwK8");
-
-document.getElementById('mailForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-
-  const firstname = firstname.value.trim();
-  const lastname = lastname.value.trim();
-  const email = email.value.trim();
-  const msg = message.value.trim();
-
-  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  if (!msg) {
-    alert("Please enter your message (max 200 chars).");
-    return;
-  }
-
-  const fullName = `${firstname} ${lastname}`.trim() || "Visitor from website";
-
-  emailjs.send("service_owjq15q", "template_9ikqhbi", {
-    from_name: fullName,
-    from_email: email,
-    message: msg,
-    date: new Date().toLocaleString()
-  }).then(() => {
-    alert("Message sent successfully!");
-    document.getElementById('mailForm').reset();
-  }, (error) => {
-    alert("Failed to send message. Try again later.");
-    console.error(error);
-  });
-});
-</script>
 
 </body>
 </html>
