@@ -18,7 +18,7 @@ let counter = localStorage.getItem("counter") ? parseInt(localStorage.getItem("c
 function generateID() {
   const type = document.getElementById("type").value.toUpperCase();
   const number = String(counter).padStart(3, "0");
-  document.getElementById("code").innerText = `${type}_${number}.FL3X`;
+  document.getElementById("code").innerText = `${type}#${number}.FL3X`;
   
   counter++;
   if (counter > 999) counter = 1;
