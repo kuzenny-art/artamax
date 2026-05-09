@@ -14,7 +14,7 @@ a.text-primary { color: #0389ff !important; } a.text-primary:hover { color: #038
 .form-control:active, .form-control:focus, .custom-select:active, .custom-select:focus { border-color: #0389ff; -webkit-box-shadow: none; box-shadow: none; background: transparent; } 
 .gutter-v1 { margin-right: -20px; margin-left: -20px; } @media (max-width: 991.98px) { .gutter-v1 { margin-left: -15px; margin-right: -15px; } } 
 .gutter-v1 > .col, .gutter-v1 > [class*="col-"] { padding-right: 20px; padding-left: 20px; } @media (max-width: 991.98px) { .gutter-v1 > .col, .gutter-v1 > [class*="col-"] { padding-right: 15px; padding-left: 15px; } } 
-.gutter-v2 { margin-right: -5px; margin-left: -5px; } @media (max-width: 991.98px) { .gutter-v2 { margin-left: -15px; margin-right: -15px; } } 
+.gutter-v2 { margin-right: -1px; margin-left: -1px; } @media (max-width: 991.98px) { .gutter-v2 { margin-left: -15px; margin-right: -15px; } } 
 .gutter-v2 > .col, .gutter-v2 > [class*="col-"] { padding-right: 1px; padding-left: 1px; } @media (max-width: 991.98px) { .gutter-v2 > .col, .gutter-v2 > [class*="col-"] { padding-right: 1px; padding-left: 1px; } } 
 .gutter-v3 { margin-right: -40px; margin-left: -40px; } @media (max-width: 991.98px) { .gutter-v3 { margin-left: -15px; margin-right: -15px; } } 
 .gutter-v3 > .col, .gutter-v3 > [class*="col-"] { padding-right: 40px; padding-left: 40px; } @media (max-width: 991.98px) { .gutter-v3 > .col, .gutter-v3 > [class*="col-"] { padding-right: 15px; padding-left: 15px; } } 
